@@ -1,0 +1,52 @@
+13485 - String Calculator(class)
+#include <bits/stdc++.h>
+#include "function.h"
+using namespace std;
+
+String_Calculator::String_Calculator(const string str)
+{
+    this->s = str;
+}
+
+String_Calculator& String_Calculator::Add(const string str)
+{
+    this->s = this->s + str;
+    //cout << this->s << endl;
+    return (*this);
+}
+
+String_Calculator& String_Calculator::Subtract(const string str)
+{
+    int pos = this->s.find(str);
+
+    if(pos != string::npos){
+        this->s.erase(this->s.find(str), str.length());
+    }
+    else{
+        this->s = "error";
+    }
+    return (*this);
+}
+
+int cnt = 0;
+
+String_Calculator& String_Calculator::DividedBy(const string str)
+{
+     int ls_len = s.length();
+    int ss_len = str.length();
+    cnt = 0;
+    for(int i=0; i <= ls_len - ss_len; i++){
+        int j;
+        for(j=0; j<ss_len; j++){
+            if(s[i+j] != str[j]) break;
+        }
+        if(j == ss_len) cnt++;
+    }
+    return *this;
+}
+
+void String_Calculator::output() const
+{
+    cout << cnt << endl;
+}
+
