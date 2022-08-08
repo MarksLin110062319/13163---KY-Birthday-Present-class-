@@ -1,3 +1,4 @@
+13172 - Powers  
 #include <bits/stdc++.h>
 #include "function.h"
 #define ll long long
