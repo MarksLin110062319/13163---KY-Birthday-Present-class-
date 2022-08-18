@@ -1,3 +1,4 @@
+13182 - Twenty One
 #include <bits/stdc++.h>
 #include "function.h"
 using namespace std;
@@ -53,17 +54,17 @@ void Casino::Enterance(int f)
 
 void Casino::GuestEnter(string s, int m, int ski)
 {
-    //¤w¸g¦b½ä³õ
+    //å·²ç¶“åœ¨è³­å ´
     for(int i = 0; i < guest_num; i++){
         if(guest[i]->get_name() == s)
             return;
     }
-    //¦b¶Â¦W³æ¤¤
+    //åœ¨é»‘åå–®ä¸­
     for(int i = 0; i < list_num; i++){
         if(blacklist[i] == s)
             return;
     }
-    //½T»{·|¤£·|¯}²£
+    //ç¢ºèªæœƒä¸æœƒç ´ç”¢
     if(m <= fee){
         income += m;
         for(int i = 0; i < guest_num; i++){
@@ -75,14 +76,14 @@ void Casino::GuestEnter(string s, int m, int ski)
     }
     else{
         income += fee;
-        guest[guest_num] = new Guest(s, m-fee, ski);    //¥i¯à¦³°İÃD?
+        guest[guest_num] = new Guest(s, m-fee, ski);    //å¯èƒ½æœ‰å•é¡Œ?
         guest_num++;
     }
 }
 
 void Casino::Win(string s, int m)
 {
-    //¤£¦b½ä³õ
+    //ä¸åœ¨è³­å ´
     int emp = 1;
     for(int i = 0; i < guest_num; i++){
         if(guest[i]->get_name() == s)
@@ -90,7 +91,7 @@ void Casino::Win(string s, int m)
     }
     if(emp)
         return;
-    //¦b¶Â¦W³æ¤¤
+    //åœ¨é»‘åå–®ä¸­
     for(int i = 0; i < list_num; i++){
         if(blacklist[i] == s)
             return;
