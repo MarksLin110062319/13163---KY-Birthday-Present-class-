@@ -1,3 +1,4 @@
+13464 - Compare strings or characters
 #include <bits/stdc++.h>
 #include "function.h"
 using namespace std;
