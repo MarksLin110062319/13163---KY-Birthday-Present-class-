@@ -1,3 +1,4 @@
+13472 - KYてぇてぇ — Birthday Present（class + reverse）
 #include <bits/stdc++.h>
 #include "function.h"
 using namespace std;
